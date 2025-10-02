@@ -12,15 +12,15 @@
 #navbar {
   padding: 0px 10px;
   margin: 20px 0px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0);
   border: 1px solid rgba(255, 253, 253, 1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-radius: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   align-items: center;
   width: 70%;
 }
