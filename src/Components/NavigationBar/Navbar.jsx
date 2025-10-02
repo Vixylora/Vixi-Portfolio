@@ -1,5 +1,6 @@
 import { Navdata } from "./Navdata";
 import "./Navbar.css";
+import TargetCursor from "../CursorTarget/TargetCursor";
 
 // Will be added later when there is a better icon, css line 35, navbar.css
 // import favedicon from "../../assets/Target2.jpeg";
@@ -21,8 +22,8 @@ function Navbar() {
               );
             })}
           </div>
-          <div>
-            <a href="#ContactMe" id="contact-button">CONTACT ME</a>
+          <div id="contact-button">
+            <a href="#ContactMe" id="contact-btn">CONTACT ME</a>
           </div>
         </div>
       </div>
