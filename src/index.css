@@ -6,3 +6,8 @@ body {
 a {
     text-decoration: none;
 }
+
+button {
+    border: 0;
+    border-radius: 0;
+}
