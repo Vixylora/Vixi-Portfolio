@@ -22,8 +22,10 @@ function Navbar() {
               );
             })}
           </div>
-          <div id="contact-button">
-            <a href="#ContactMe" id="contact-btn">CONTACT ME</a>
+          <div id="contact-button" className="cursor-target">
+            <a href="#ContactMe" id="contact-btn">
+              CONTACT ME
+            </a>
           </div>
         </div>
       </div>

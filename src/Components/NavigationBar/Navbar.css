@@ -11,18 +11,16 @@
 
 #navbar {
   padding: 0px 10px;
-  margin: 20px 0px;
   background-color: rgba(255, 255, 255, 0);
-  border: 1px solid rgba(255, 253, 253, 1);
+  border-bottom: 1px solid rgba(255, 253, 253, 1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border-radius: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   align-items: center;
-  width: 70%;
+  width: 100%;
 }
 
 #nav-title {
@@ -42,12 +40,7 @@
   width: 500px;
 }
 
-/* Navigation sub-items */
-/* #nav-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 100px;
-} */
+/* Navigation sub items */
 
 .nav-text {
   font-family: "Poppins", sans-serif;
@@ -56,39 +49,37 @@
   font-size: 20px;
 }
 
-#contact-button{
+#contact-button {
   color: #6b3200;
   background-color: white;
-  border-radius: 50px;
+  border: 2px solid black;
   padding: 10px 20px;
+  margin-right: 5px;
   text-align: center;
   width: 120px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
+  border-radius: 7px;
 }
 
-#contact-btn{
+#contact-btn {
   color: inherit;
 }
 
-#contact-button:hover{
-  background-color: #F8DC9E;
+#contact-button:hover {
+  background-color: #FFC08A;
   color: black;
+  box-shadow: 0 0 5px #FFC08A;
 }
 
 /* =======  Desktop  ========= */
 
-
 @media (min-width: 1000px) {
-  #navbar {
-    width: 70%;
-  }
-
   #nav-items {
     display: flex;
   }
 
-  .NavButton{
+  .NavButton {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-size: 16px;
@@ -107,14 +98,12 @@
 
 /* ======== tablet & mobile =========== */
 
-
 @media (max-width: 1000px) {
-
   #nav-items {
     display: none;
   }
 
-  .nav-text{
+  .nav-text {
     font-size: 20px;
   }
 }
