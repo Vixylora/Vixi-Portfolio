@@ -2,16 +2,16 @@ export const Navdata = [
         {
             title: "ABOUT ME",
             path: "#aboutme",
-            cName: "NavButton"
+            cName: "NavButton cursor-target"
         },
         {
             title: "PROJECTS",
             path: "#projects",
-            cName: "NavButton"
+            cName: "NavButton cursor-target"
         },
         {
             title: "DEV BLOG",
             path: "#devblog",
-            cName: "NavButton"
+            cName: "NavButton cursor-target"
         }
     ]
