@@ -1,0 +1,70 @@
+/* header 2rem, "inter", sans-serif | paragraph 1.5rem, "inter", sans-serif */
+
+#about-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #2e2e2e;
+  margin-top: 7rem;
+}
+
+#aboutme {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  max-width: 45rem;
+}
+
+#about-title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+#divider {
+  margin-top: 3px;
+  border: 1px solid white;
+  width: 70%;
+}
+
+#about-name {
+  font-family: "inter", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#about-important {
+  color: #ffc08a;
+  font-family: "Elsie", serif;
+  font-weight: 600;
+}
+
+#about-description {
+  margin-top: 0.5rem;
+  font-family: "Inter", sans-serif;
+  color: white;
+  font-size: 1.25rem;
+  text-align: center;
+  width: 80%;
+  padding: 0 20px;
+}
+
+@media (max-width: 1000px) {
+  #about-description {
+    padding: 0;
+    width: 80%;
+  }
+}
