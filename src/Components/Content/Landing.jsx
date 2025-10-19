@@ -1,6 +1,6 @@
 import Hero from "./HeroSection/Hero";
 import AboutMe from "./AboutMe/aboutme";
-import "./landing.css";
+import "./Landing.css";
 
 function Landing() {
     return(
