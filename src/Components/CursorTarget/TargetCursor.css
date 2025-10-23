@@ -29,6 +29,7 @@
   width: 12px;
   height: 12px;
   border: 3px solid #ffffff;
+  border-radius: 3px;
   will-change: transform;
 }
 
