@@ -1,23 +1,19 @@
 #Skills {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
   width: 60%;
   max-width: 20rem;
-  border: 2px solid white;
-  border-radius: 9px;
-  padding: 10px 20px;
 }
 
 #Skills-holder {
   margin-top: 1rem;
   margin-bottom: 2rem;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
@@ -39,4 +35,12 @@
   background-color: white;
   border-radius: 50px;
   margin: 1rem 0;
+}
+
+@media (max-width: 500px) {
+  #Skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
