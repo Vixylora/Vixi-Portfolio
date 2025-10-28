@@ -4,6 +4,9 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    border: 2px solid white;
+    border-radius: 9px;
+    padding: 10px 20px;
 }
 
 .Lang-select {
