@@ -199,8 +199,6 @@
   .btn1:hover {
     box-shadow: 0 0 5px #ffc08a;
     cursor: pointer;
-    width: 11rem;
-    height: 3.2rem;
   }
 }
 
