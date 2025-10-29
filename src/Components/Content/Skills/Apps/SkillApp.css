@@ -1,0 +1,75 @@
+#Skillapps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 9px;
+    padding: 15px 15px;
+    gap: 10px;
+}
+
+.appclass {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.appclass:hover {
+    text-shadow: 0 0 2px #FFE1BA;
+    box-shadow: 0 0 7px white;
+}
+
+.image-size {
+    height: 40px;
+    width: 40px;
+    background-color: #1d1d1d;
+    border: 2px solid white;
+    border-radius: 7px;
+    padding: 5px 5px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    margin-right: 0.25rem;
+}
+
+.title-class {
+    color: white;
+    margin: 0;
+    margin-bottom: 3px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.profeciency-class {
+    color: #CFCECE;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .appclass {
+        justify-content: start;
+        border-radius: 50px;
+    }
+    
+    .image-size {
+        height: 38px;
+        width: 38px;
+        border-radius: 50px;
+    }
+
+    .text-container {
+        align-items: start;
+    }
+}
