@@ -1,0 +1,63 @@
+#dictionary-items {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.meaning {
+  padding: 2px 5px;
+  color: white;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 3px;
+}
+
+.dict1 {
+  color: #ffe1ba;
+  border: 2px solid #ffe1ba;
+}
+
+.dict2 {
+  color: #ffc88f;
+  border: 2px solid #ffc88f;
+}
+
+.dict3 {
+  color: #ffa95e;
+  border: 2px solid #ffa95e;
+}
+
+.dict4 {
+  color: #f07d3c;
+  border: 2px solid #f07d3c;
+}
+
+.dict5 {
+  color: #c75b24;
+  border: 2px solid #c75b24;
+}
+
+@media (max-width: 1000px) {
+  #dictionary-items {
+    width: 80%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1155px) {
+  #dictionary-items {
+    width: 60%;
+  }
+}

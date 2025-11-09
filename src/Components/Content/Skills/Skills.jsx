@@ -1,6 +1,7 @@
 import "./Skills.css";
 import SkillApp from "./Apps/SkillApp";
 import SkillLang from "./Languages/SkillLang";
+import Dictionary from "./dictionary";
 
 function Skill() {
     return(
@@ -10,6 +11,7 @@ function Skill() {
                 <SkillApp />
                 <SkillLang />
             </div>
+            <Dictionary />
         </div>
     )
 }
