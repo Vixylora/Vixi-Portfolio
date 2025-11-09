@@ -1,9 +1,11 @@
 import { Colorselector, widthselector } from "../Profeciency.jsx";
 
+// Booting Up / Debugging / Optimized / Overclocked / Hypercharged
+
 const LanguagesData = [
     {
         name: "Typescript",
-        level: "Forging",
+        level: "Booting Up",
         color: Colorselector("Forging"),
         width: widthselector("Forging"),
         classN: "Lang-select cursor-target",
@@ -12,7 +14,7 @@ const LanguagesData = [
     },
     {
         name: "JavaScript",
-        level: "Tempered",
+        level: "Debugging",
         color: Colorselector("Tempered"),
         width: widthselector("Tempered"),
         classN: "Lang-select cursor-target",
@@ -21,7 +23,7 @@ const LanguagesData = [
     },
     {
         name: "CSS3",
-        level: "Honed",
+        level: "Optimized",
         color: Colorselector("Honed"),
         width: widthselector("Honed"),
         classN: "Lang-select cursor-target",
@@ -30,9 +32,9 @@ const LanguagesData = [
     },
     {
         name: "HTML5",
-        level: "Mastered",
-        color: Colorselector("Mastered"),
-        width: widthselector("Mastered"),
+        level: "Optimized",
+        color: Colorselector("Honed"),
+        width: widthselector("Honed"),
         classN: "Lang-select cursor-target",
         className: "Lang-title",
         classLevel: "Lang-level"
@@ -48,7 +50,7 @@ const LanguagesData = [
     },
     {
         name: "React",
-        level: "Tempered",
+        level: "Debugging",
         color: Colorselector("Tempered"),
         width: widthselector("Tempered"),
         classN: "Lang-select cursor-target",
@@ -57,7 +59,7 @@ const LanguagesData = [
     },
     {
         name: "Tailwind",
-        level: "Honed",
+        level: "Optimized",
         color: Colorselector("Honed"),
         width: widthselector("Honed"),
         classN: "Lang-select cursor-target",

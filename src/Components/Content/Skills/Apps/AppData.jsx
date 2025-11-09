@@ -1,9 +1,10 @@
-// Forging / Tempered / Honed / Mastered / Transcendant
 import Figma from "./AppIcons/figma.png";
 import RobloxStudio from "./AppIcons/RobloxStudio.png";
 import VScode from "./AppIcons/VScode.png";
 import Git from "./AppIcons/Git.png";
 import GitHub from "./AppIcons/GitHub.png";
+
+// Booting Up / Debugging / Optimized / Overclocked / Hypercharged
 
 const AppList = [
   {
@@ -12,7 +13,7 @@ const AppList = [
     imgclass: "image-size",
         name: "Roblox Studio",
     titleclass: "title-class",
-    profeciency: "Honed",
+    profeciency: "Optimized",
     profeciencyclass: "profeciency-class",
   },
   {
@@ -21,7 +22,7 @@ const AppList = [
     imgclass: "image-size",
         name: "Figma",
     titleclass: "title-class",
-    profeciency: "Mastered",
+    profeciency: "Overclocked",
     profeciencyclass: "profeciency-class",
   },
   {
@@ -30,7 +31,7 @@ const AppList = [
     imgclass: "image-size",
         name: "Visual Studio Code",
     titleclass: "title-class",
-    profeciency: "Mastered",
+    profeciency: "Overclocked",
     profeciencyclass: "profeciency-class",
   },
   {
@@ -39,7 +40,7 @@ const AppList = [
     imgclass: "image-size",
         name: "Git",
     titleclass: "title-class",
-    profeciency: "Honed",
+    profeciency: "Optimized",
     profeciencyclass: "profeciency-class",
   },
   {
@@ -48,7 +49,7 @@ const AppList = [
     imgclass: "image-size",
         name: "GitHub",
     titleclass: "title-class",
-    profeciency: "Honed",
+    profeciency: "Optimized",
     profeciencyclass: "profeciency-class",
   },
 ];
