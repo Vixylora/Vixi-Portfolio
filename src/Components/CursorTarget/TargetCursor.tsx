@@ -2,15 +2,21 @@ import { useEffect, useRef, useCallback, useMemo } from "react";
 import { gsap } from "gsap";
 import "./TargetCursor.css";
 
+interface TargetCursorProps {
+  targetSelector?: string;
+  spinDuration?: number;
+  hideDefaultCursor?: boolean;
+}
+
 const TargetCursor = ({
   targetSelector = ".cursor-target",
   spinDuration = 3,
   hideDefaultCursor = true,
-}) => {
-  const cursorRef = useRef(null);
-  const cornersRef = useRef(null);
-  const spinTl = useRef(null);
-  const dotRef = useRef(null);
+}: TargetCursorProps) => {
+  const cursorRef = useRef<HTMLDivElement | null>(null);
+  const cornersRef = useRef<NodeListOf<Element> | null>(null);
+  const spinTl = useRef<gsap.core.Timeline | null>(null);
+  const dotRef = useRef<HTMLDivElement | null>(null);
   const constants = useMemo(
     () => ({
       borderWidth: 3,
@@ -20,7 +26,7 @@ const TargetCursor = ({
     []
   );
 
-  const moveCursor = useCallback((x, y) => {
+  const moveCursor = useCallback((x: number, y: number) => {
     if (!cursorRef.current) return;
     gsap.to(cursorRef.current, {
       x,
@@ -41,18 +47,18 @@ const TargetCursor = ({
     const cursor = cursorRef.current;
     cornersRef.current = cursor.querySelectorAll(".target-cursor-corner");
 
-    let activeTarget = null;
-    let currentTargetMove = null;
-    let currentLeaveHandler = null;
+    let activeTarget: Element | null = null;
+    let currentTargetMove: ((ev: MouseEvent) => void) | null = null;
+    let currentLeaveHandler: (() => void) | null = null;
     let isAnimatingToTarget = false;
-    let resumeTimeout = null;
+    let resumeTimeout: ReturnType<typeof setTimeout> | null = null;
 
-    const cleanupTarget = (target) => {
+    const cleanupTarget = (target: Element) => {
       if (currentTargetMove) {
-        target.removeEventListener("mousemove", currentTargetMove);
+        target.removeEventListener("mousemove", currentTargetMove as EventListener);
       }
       if (currentLeaveHandler) {
-        target.removeEventListener("mouseleave", currentLeaveHandler);
+        target.removeEventListener("mouseleave", currentLeaveHandler as EventListener);
       }
       currentTargetMove = null;
       currentLeaveHandler = null;
@@ -80,14 +86,14 @@ const TargetCursor = ({
 
     createSpinTimeline();
 
-    const moveHandler = (e) => moveCursor(e.clientX, e.clientY);
+    const moveHandler = (e: MouseEvent) => moveCursor(e.clientX, e.clientY);
     window.addEventListener("mousemove", moveHandler);
 
     const scrollHandler = () => {
       if (!activeTarget || !cursorRef.current) return;
 
-      const mouseX = gsap.getProperty(cursorRef.current, "x");
-      const mouseY = gsap.getProperty(cursorRef.current, "y");
+      const mouseX = gsap.getProperty(cursorRef.current, "x") as number;
+      const mouseY = gsap.getProperty(cursorRef.current, "y") as number;
 
       const elementUnderMouse = document.elementFromPoint(mouseX, mouseY);
       const isStillOverTarget =
@@ -125,11 +131,12 @@ const TargetCursor = ({
     window.addEventListener("mouseup", mouseUpHandler);
 
     //----------------------------------------------------------------
-    const enterHandler = (e) => {
-      const directTarget = e.target;
+    const enterHandler = (e: Event) => {
+      const mouseEvent = e as MouseEvent;
+      const directTarget = mouseEvent.target as Element;
 
-      const allTargets = [];
-      let current = directTarget;
+      const allTargets: Element[] = [];
+      let current: Element | null = directTarget;
       while (current && current !== document.body) {
         if (current.matches(targetSelector)) {
           allTargets.push(current);
@@ -162,7 +169,8 @@ const TargetCursor = ({
 
       gsap.set(cursorRef.current, { rotation: 0 });
 
-      const updateCorners = (mouseX, mouseY) => {
+      const updateCorners = (mouseX?: number, mouseY?: number) => {
+        if (!cursorRef.current || !cornersRef.current) return;
         const rect = target.getBoundingClientRect();
         const cursorRect = cursorRef.current.getBoundingClientRect();
 
@@ -207,10 +215,10 @@ const TargetCursor = ({
         }
 
         const tl = gsap.timeline();
-        const corners = [tlc, trc, brc, blc];
+        const cornersArr = [tlc, trc, brc, blc];
         const offsets = [tlOffset, trOffset, brOffset, blOffset];
 
-        corners.forEach((corner, index) => {
+        cornersArr.forEach((corner, index) => {
           tl.to(
             corner,
             {
@@ -231,8 +239,8 @@ const TargetCursor = ({
         isAnimatingToTarget = false;
       }, 1);
 
-      let moveThrottle = null;
-      const targetMove = (ev) => {
+      let moveThrottle: number | null = null;
+      const targetMove = (ev: MouseEvent) => {
         if (moveThrottle || isAnimatingToTarget) return;
         moveThrottle = requestAnimationFrame(() => {
           const mouseEvent = ev;
@@ -277,7 +285,7 @@ const TargetCursor = ({
             const currentRotation = gsap.getProperty(
               cursorRef.current,
               "rotation"
-            );
+            ) as number;
             const normalizedRotation = currentRotation % 360;
 
             spinTl.current.kill();
@@ -307,11 +315,11 @@ const TargetCursor = ({
       currentTargetMove = targetMove;
       currentLeaveHandler = leaveHandler;
 
-      target.addEventListener("mousemove", targetMove);
-      target.addEventListener("mouseleave", leaveHandler);
+      target.addEventListener("mousemove", targetMove as EventListener);
+      target.addEventListener("mouseleave", leaveHandler as EventListener);
     };
 
-    window.addEventListener("mouseover", enterHandler, { passive: true });
+    window.addEventListener("mouseover", enterHandler, { passive: true } as AddEventListenerOptions);
 
     return () => {
       window.removeEventListener("mousemove", moveHandler);

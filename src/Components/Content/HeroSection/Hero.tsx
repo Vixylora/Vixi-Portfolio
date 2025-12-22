@@ -2,19 +2,16 @@ import "./Hero.css";
 import "./Infinitytext.css";
 import { Herodata, Heropara } from "./HeroData";
 
-import { RiScrollToBottomFill } from "react-icons/ri";
-import { BiSolidDonateHeart } from "react-icons/bi";
 import profilepic from "../../../assets/profilepic.jpeg";
 
 function Hero() {
-  const Donation = "";
   return (
     <div id="Hero-container">
       <div id="Hero-wrapper">
-        <img src={profilepic} id="Hero-img" className="cursor-target" />
+        <img src={profilepic} id="Hero-img" className="cursor-target" alt="Profile" />
         <div id="wrapper">
           {Herodata.map((items, index) => {
-            return <div className={items.cName}>{items.text}</div>;
+            return <div key={index} className={items.cName}>{items.text}</div>;
           })}
         </div>
         <div id="Hero-text">
