@@ -1,4 +1,4 @@
-import { Colorselector, widthselector } from "../Profeciency.jsx";
+import { Colorselector, widthselector } from "../Profeciency";
 
 // Booting Up / Debugging / Optimized / Overclocked / Hypercharged
 

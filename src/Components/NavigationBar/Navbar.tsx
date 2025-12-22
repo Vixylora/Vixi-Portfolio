@@ -1,6 +1,5 @@
 import { Navdata } from "./Navdata";
 import "./Navbar.css";
-import TargetCursor from "../CursorTarget/TargetCursor";
 
 // Will be added later when there is a better icon, css line 35, navbar.css
 // import favedicon from "../../assets/Target2.jpeg";
