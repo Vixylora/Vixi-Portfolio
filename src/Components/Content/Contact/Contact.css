@@ -354,6 +354,7 @@
   font-style: normal;
   word-break: break-all;
   font-size: 1rem;
+  text-align: left;
 }
 
 .email-actions-row {
@@ -444,6 +445,15 @@
 
   #StatusText {
     text-align: center;
+  }
+
+  /* Keep email text left-aligned even on mobile */
+  #EmailContainer #StatusText {
+    text-align: left;
+  }
+
+  #EmailContainer #Discordtext {
+    align-items: flex-start;
   }
 
   #AvatarContainer {
