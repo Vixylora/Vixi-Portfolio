@@ -16,7 +16,7 @@ function DiscordStatus() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://api.lanyard.rest/v1/users/1066056849996247100")
+    fetch("https://api.lanyard.rest/v1/users/765681431308927017")
       .then((res) => res.json())
       .then((json) => {
         setData(json.data);
@@ -68,7 +68,7 @@ function DiscordStatus() {
           </div>
         </div>
         <div className="divider dc-send-divider"></div>
-        <a target="_blank" href="https://discord.com/users/1066056849996247100" id="DiscordButton" className="cursor-target" rel="noopener noreferrer">
+        <a target="_blank" href="https://discord.com/users/765681431308927017" id="DiscordButton" className="cursor-target" rel="noopener noreferrer">
           <button type="button">Send a message</button>
         </a>
       </div>

@@ -11,10 +11,6 @@ function EmailContact() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleEmailClick = () => {
-    window.location.href = `mailto:${EMAIL}`;
-  };
-
   return (
     <div id="EmailContainer">
       <div id="DiscordCard" className="email-card">
@@ -39,10 +35,6 @@ function EmailContact() {
           </div>
         </div>
       </div>
-      <div className="divider dc-send-divider"></div>
-      <a href={`mailto:${EMAIL}`} id="EmailButton" className="cursor-target">
-        <button type="button">Send Email</button>
-      </a>
     </div>
   );
 }
