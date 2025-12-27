@@ -13,14 +13,67 @@ const statusIcons = {
 
 function DiscordStatus() {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://api.lanyard.rest/v1/users/1066056849996247100")
       .then((res) => res.json())
-      .then((json) => setData(json.data));
+      .then((json) => {
+        setData(json.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching Discord status:", error);
+        setLoading(false);
+      });
   }, []);
 
-  if (!data) return null;
+  if (loading) {
+    return (
+      <div id="DiscordCardContainer">
+        <div id="DiscordCard">
+          <div id="AvatarContainer">
+            <div style={{width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              Loading...
+            </div>
+          </div>
+          <div id="Discordtext">
+            <div id="TextContainer">
+              <div id="Name">
+                <h2 id="DisplayName">Loading Discord...</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!data) {
+    return (
+      <div id="DiscordCardContainer">
+        <div id="DiscordCard">
+          <div id="AvatarContainer">
+            <img src={offline} id="status" alt="offline" style={{width: '80px', height: '80px', borderRadius: '50%'}} />
+          </div>
+          <div id="Discordtext">
+            <div id="TextContainer">
+              <div id="Name">
+                <h2 id="DisplayName">Discord</h2>
+                <h4 id="UserName">(vixylora)</h4>
+              </div>
+              <div className="discord-divider"></div>
+              <p id="StatusText">Status: Offline</p>
+            </div>
+          </div>
+        </div>
+        <div className="divider dc-send-divider"></div>
+        <a target="_blank" href="https://discord.com/users/1066056849996247100" id="DiscordButton" className="cursor-target" rel="noopener noreferrer">
+          <button type="button">Send a message</button>
+        </a>
+      </div>
+    );
+  }
 
   const { discord_user, discord_status } = data;
   const StatusText = data.activities.find(a => a.type === 4);
