@@ -10,9 +10,11 @@ gsap.registerPlugin(ScrollTrigger);
  */
 export const useScrollAnimation = () => {
   useEffect(() => {
+    const triggers = [];
+
     // Fade in animation
     gsap.utils.toArray('.scroll-animate').forEach((element) => {
-      gsap.fromTo(
+      const trigger = gsap.fromTo(
         element,
         {
           opacity: 0,
@@ -31,11 +33,12 @@ export const useScrollAnimation = () => {
           },
         }
       );
+      if (trigger.scrollTrigger) triggers.push(trigger.scrollTrigger);
     });
 
     // Slide in from left
     gsap.utils.toArray('.slide-in-left').forEach((element) => {
-      gsap.fromTo(
+      const trigger = gsap.fromTo(
         element,
         {
           opacity: 0,
@@ -53,11 +56,12 @@ export const useScrollAnimation = () => {
           },
         }
       );
+      if (trigger.scrollTrigger) triggers.push(trigger.scrollTrigger);
     });
 
     // Slide in from right
     gsap.utils.toArray('.slide-in-right').forEach((element) => {
-      gsap.fromTo(
+      const trigger = gsap.fromTo(
         element,
         {
           opacity: 0,
@@ -75,12 +79,13 @@ export const useScrollAnimation = () => {
           },
         }
       );
+      if (trigger.scrollTrigger) triggers.push(trigger.scrollTrigger);
     });
 
     // Stagger animation for children
     gsap.utils.toArray('.stagger-children').forEach((element) => {
       const children = element.children;
-      gsap.fromTo(
+      const trigger = gsap.fromTo(
         children,
         {
           opacity: 0,
@@ -99,11 +104,12 @@ export const useScrollAnimation = () => {
           },
         }
       );
+      if (trigger.scrollTrigger) triggers.push(trigger.scrollTrigger);
     });
 
-    // Cleanup
+    // Cleanup - only kill triggers created by this hook
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      triggers.forEach((trigger) => trigger.kill());
     };
   }, []);
 };

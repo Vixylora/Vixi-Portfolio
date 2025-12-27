@@ -22,14 +22,14 @@ function Contact() {
         <div id="contact-grid">
           {contactData.map((contact, index) => {
             const IconComponent = iconMap[contact.icon];
+            const colorClass = `contact-card-${contact.name.toLowerCase()}`;
             return (
               <a
                 key={index}
                 href={contact.link}
-                className="contact-card cursor-target"
+                className={`contact-card ${colorClass} cursor-target`}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ '--hover-color': contact.color }}
               >
                 <div className="contact-icon">
                   <IconComponent size={40} />

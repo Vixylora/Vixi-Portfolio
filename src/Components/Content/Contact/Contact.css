@@ -60,10 +60,26 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--hover-color, #ffc08a) 0%, transparent 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 0;
+}
+
+/* Platform-specific hover colors */
+.contact-card-discord::before {
+  background: linear-gradient(135deg, #5865F2 0%, transparent 100%);
+}
+
+.contact-card-github::before {
+  background: linear-gradient(135deg, #ffffff 0%, transparent 100%);
+}
+
+.contact-card-email::before {
+  background: linear-gradient(135deg, #ffc08a 0%, transparent 100%);
+}
+
+.contact-card-twitter::before {
+  background: linear-gradient(135deg, #1DA1F2 0%, transparent 100%);
 }
 
 .contact-card:hover::before {
@@ -72,8 +88,23 @@
 
 .contact-card:hover {
   transform: translateY(-8px);
-  border-color: var(--hover-color, #ffc08a);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card-discord:hover {
+  border-color: #5865F2;
+}
+
+.contact-card-github:hover {
+  border-color: #ffffff;
+}
+
+.contact-card-email:hover {
+  border-color: #ffc08a;
+}
+
+.contact-card-twitter:hover {
+  border-color: #1DA1F2;
 }
 
 .contact-icon {
@@ -95,8 +126,20 @@
   transform: scale(1.1);
 }
 
-.contact-card:hover .contact-icon svg {
-  color: var(--hover-color, #ffc08a);
+.contact-card-discord:hover .contact-icon svg {
+  color: #5865F2;
+}
+
+.contact-card-github:hover .contact-icon svg {
+  color: #ffffff;
+}
+
+.contact-card-email:hover .contact-icon svg {
+  color: #ffc08a;
+}
+
+.contact-card-twitter:hover .contact-icon svg {
+  color: #1DA1F2;
 }
 
 .contact-info {
@@ -113,8 +156,20 @@
   transition: color 0.3s ease;
 }
 
-.contact-card:hover .contact-name {
-  color: var(--hover-color, #ffc08a);
+.contact-card-discord:hover .contact-name {
+  color: #5865F2;
+}
+
+.contact-card-github:hover .contact-name {
+  color: #ffffff;
+}
+
+.contact-card-email:hover .contact-name {
+  color: #ffc08a;
+}
+
+.contact-card-twitter:hover .contact-name {
+  color: #1DA1F2;
 }
 
 .contact-value {
