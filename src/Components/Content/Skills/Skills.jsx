@@ -5,9 +5,9 @@ import Dictionary from "./dictionary";
 
 function Skill() {
     return(
-        <div id="Skills-holder">
+        <div id="Skills-holder" className="scroll-animate">
             <h2 id="skill-title">Skills <div id="divider" /></h2>
-            <div id="Skills">
+            <div id="Skills" className="stagger-children">
                 <SkillApp />
                 <SkillLang />
             </div>

@@ -5,7 +5,7 @@ const abouttext =
 function AboutMe() {
   return (
     <div id="about-back">
-      <div id="aboutme">
+      <div id="aboutme" className="scroll-animate">
         <div id="about-title">
           <h2 id="about-name">
             About&nbsp;<span id="about-important">Me</span>
