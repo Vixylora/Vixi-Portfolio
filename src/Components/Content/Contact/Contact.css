@@ -1,202 +1,474 @@
-/* Contact Section Styles */
-#contact-section {
-  width: 100%;
+/* Contact Section Styles - Matching Site Design */
+#ContactMe {
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
-  background-color: #222222;
+  width: 100%;
+  background-color: #2e2e2e;
   padding: 4rem 0;
-  margin-top: 4rem;
+  margin-top: 7rem;
 }
 
-#contact-container {
+#ContactSection {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 30px;
+}
+
+/* Contact Widgets */
+#ContactWidgets {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1000px;
-  padding: 0 20px;
-}
-
-.contact-description {
-  font-family: "Inter", sans-serif;
-  color: white;
-  font-size: 1.125rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-}
-
-#contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
   max-width: 800px;
+  margin-top: 2rem;
 }
 
-/* Contact Card */
-.contact-card {
+/* Discord Widget */
+#DiscordCardContainer {
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+#DiscordCardContainer:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(114, 137, 218, 0.5);
+  box-shadow: 0 4px 20px rgba(114, 137, 218, 0.2);
+}
+
+#DiscordCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  height: auto;
+}
+
+#AvatarContainer {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+#avatar {
+  border: 2px solid #ffc08a;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+#Discordtext {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex: 1;
+  gap: 0.5rem;
+}
+
+#StatusContainer {
+  padding: 3px;
+  background: #2e2e2e;
+  position: absolute;
+  border-radius: 50%;
+  width: 30%;
+  bottom: 0px;
+  right: 0px;
+}
+
+#status {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#DisplayName,
+#UserName {
+  color: white;
+  margin: 0;
+}
+
+.discord-divider {
+  margin: 0.5rem 0;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#Name {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+#DisplayName {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+#UserName {
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+#StatusText {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+#guild_badge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  gap: 5px;
+  padding: 4px 10px;
+  background: rgba(255, 192, 138, 0.1);
+  border: 1px solid rgba(255, 192, 138, 0.3);
+  border-radius: 5px;
+}
+
+#guildicon {
+  height: 100%;
+}
+
+#guildtag {
+  color: #ffc08a;
+  font-size: 0.85rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+#TextContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.dc-send-divider {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#DiscordButton {
+  font-family: "Inter", sans-serif;
+  color: white;
+  background-color: rgba(114, 137, 218, 0.2);
+  border: 2px solid rgba(114, 137, 218, 0.3);
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+#DiscordButton button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+#DiscordButton:hover {
+  background-color: rgba(114, 137, 218, 0.3);
+  border-color: #7289da;
+  box-shadow: 0 2px 8px rgba(114, 137, 218, 0.3);
+}
+
+/* Github Widget */
+#GitContainer {
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+#GitContainer:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 192, 138, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 192, 138, 0.2);
+}
+
+#gitavatar {
+  border: 2px solid #ffc08a;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+#GitText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+#GitTextContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 0;
+  gap: 0.5rem;
 }
 
-/* Platform-specific hover colors */
-.contact-card-discord::before {
-  background: linear-gradient(135deg, #5865F2 0%, transparent 100%);
+#GitStats {
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: white;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
 }
 
-.contact-card-github::before {
-  background: linear-gradient(135deg, #ffffff 0%, transparent 100%);
+#GitStats p {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
-.contact-card-email::before {
-  background: linear-gradient(135deg, #ffc08a 0%, transparent 100%);
-}
-
-.contact-card-twitter::before {
-  background: linear-gradient(135deg, #1DA1F2 0%, transparent 100%);
-}
-
-.contact-card:hover::before {
-  opacity: 0.1;
-}
-
-.contact-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.contact-card-discord:hover {
-  border-color: #5865F2;
-}
-
-.contact-card-github:hover {
-  border-color: #ffffff;
-}
-
-.contact-card-email:hover {
-  border-color: #ffc08a;
-}
-
-.contact-card-twitter:hover {
-  border-color: #1DA1F2;
-}
-
-.contact-icon {
-  position: relative;
-  z-index: 1;
+#GitButton {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #222222;
+  background-color: #ffc08a;
+  border: 2px solid #ffc08a;
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+#GitButton button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+#GitButton:hover {
+  background-color: #ffb570;
+  box-shadow: 0 2px 8px rgba(255, 192, 138, 0.4);
+}
+
+/* Email Widget */
+#EmailContainer {
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
   transition: all 0.3s ease;
 }
 
-.contact-card:hover .contact-icon {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: scale(1.1);
+#EmailContainer:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 192, 138, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 192, 138, 0.2);
 }
 
-.contact-card-discord:hover .contact-icon svg {
-  color: #5865F2;
+#EmailContainer #DiscordCard {
+  background: transparent;
 }
 
-.contact-card-github:hover .contact-icon svg {
-  color: #ffffff;
+#EmailContainer .email-icon-wrapper {
+  background: rgba(255, 192, 138, 0.1);
+  border: 2px solid rgba(255, 192, 138, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
-.contact-card-email:hover .contact-icon svg {
-  color: #ffc08a;
+#EmailContainer .email-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
 }
 
-.contact-card-twitter:hover .contact-icon svg {
-  color: #1DA1F2;
-}
-
-.contact-info {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-
-.contact-name {
-  font-family: "Inter", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem 0;
-  transition: color 0.3s ease;
-}
-
-.contact-card-discord:hover .contact-name {
-  color: #5865F2;
-}
-
-.contact-card-github:hover .contact-name {
-  color: #ffffff;
-}
-
-.contact-card-email:hover .contact-name {
-  color: #ffc08a;
-}
-
-.contact-card-twitter:hover .contact-name {
-  color: #1DA1F2;
-}
-
-.contact-value {
-  font-family: "Inter", sans-serif;
+.email-address-text {
+  color: #ffc08a !important;
+  font-style: normal;
+  word-break: break-all;
   font-size: 1rem;
-  margin: 0;
-  opacity: 0.8;
+}
+
+.email-actions-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.25rem;
+}
+
+.email-copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  background-color: rgba(255, 192, 138, 0.1);
+  color: #ffc08a;
+  border: 1px solid rgba(255, 192, 138, 0.3);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.email-copy-btn:hover {
+  background-color: rgba(255, 192, 138, 0.2);
+  border-color: #ffc08a;
+  transform: translateY(-2px);
+}
+
+#EmailButton {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #222222;
+  background-color: #ffc08a;
+  border: 2px solid #ffc08a;
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+#EmailButton button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+#EmailButton:hover {
+  background-color: #ffb570;
+  box-shadow: 0 2px 8px rgba(255, 192, 138, 0.4);
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  #contact-grid {
-    grid-template-columns: 1fr;
+  #ContactMe {
+    padding: 3rem 0;
+  }
+
+  #ContactSection {
+    padding: 0 20px;
+  }
+
+  #DiscordCard {
+    flex-direction: column;
+    text-align: center;
     gap: 1rem;
   }
-  
-  .contact-card {
-    padding: 1.5rem 1rem;
+
+  #Discordtext {
+    align-items: center;
   }
-  
-  .contact-icon {
-    width: 60px;
-    height: 60px;
+
+  #TextContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
-  
-  .contact-icon svg {
-    width: 30px;
-    height: 30px;
+
+  #StatusText {
+    text-align: center;
+  }
+
+  #AvatarContainer {
+    width: 100px;
+    height: 100px;
+  }
+
+  #GitTextContainer {
+    text-align: center;
+  }
+
+  #ContactWidgets {
+    gap: 1.5rem;
+  }
+
+  #GitStats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #DiscordCardContainer,
+  #GitContainer,
+  #EmailContainer {
+    padding: 1.5rem;
   }
 }

@@ -3,4 +3,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+}
+
+/* Add smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve section spacing */
+#landing > * {
+    width: 100%;
 }
