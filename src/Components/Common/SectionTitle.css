@@ -1,0 +1,39 @@
+/* SectionTitle Component Styles */
+.section-title-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title-highlight {
+  color: #ffc08a;
+  font-family: "Elsie", serif;
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+.section-divider {
+  margin-top: 3px;
+  border: 1px solid white;
+  width: 70%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+}

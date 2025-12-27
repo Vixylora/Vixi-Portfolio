@@ -1,0 +1,46 @@
+/* Common Text Styles */
+.common-text {
+  font-family: "Inter", sans-serif;
+  color: white;
+  margin: 0;
+}
+
+/* Body Text */
+.text-body {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+/* Large Text */
+.text-large {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Small Text */
+.text-small {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Caption Text */
+.text-caption {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+  .text-body {
+    font-size: 1.125rem;
+  }
+  
+  .text-large {
+    font-size: 1.25rem;
+  }
+  
+  .text-small {
+    font-size: 0.9rem;
+  }
+}
