@@ -483,7 +483,7 @@ button {
 }
 
 /* App proficiency level text */
-.profeciency-class {
+.proficiency-class {
     color: #CFCECE;
     margin: 0;
     font-family: "Inter", sans-serif;
@@ -798,9 +798,7 @@ button {
 @media (max-width: 500px) {
     /* Hero image size adjustment */
     #Hero-img {
-        width: auto;
         width: 15rem;
-        height: auto;
         height: 15rem;
     }
 
