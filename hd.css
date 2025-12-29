@@ -1,0 +1,808 @@
+/* ============================================
+   GLOBAL STYLES
+   Base styles applied to the entire document
+   ============================================ */
+
+body {
+    background-color: #222222;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    border-radius: 0;
+}
+
+/* ============================================
+   NAVIGATION BAR STYLES
+   Fixed header navigation with glassmorphism
+   ============================================ */
+
+/* Navigation container - fixed positioning */
+#navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+}
+
+/* Main navigation bar with glass effect */
+#navbar {
+    padding: 0px 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 253, 253, 1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo/Brand area */
+#nav-title {
+    margin-left: 20px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navigation menu items container */
+#nav-items {
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+/* Navigation text styling */
+.nav-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* Contact button styling */
+#contact-button {
+    color: #6b3200;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    margin-right: 5px;
+    text-align: center;
+    width: 120px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border-radius: 7px;
+}
+
+#contact-btn {
+    color: inherit;
+}
+
+#contact-button:hover {
+    background-color: #FFC08A;
+    color: black;
+    box-shadow: 0 0 5px #FFC08A;
+}
+
+/* ============================================
+   LANDING PAGE CONTAINER
+   Main content wrapper for all sections
+   ============================================ */
+
+#landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================================
+   HERO SECTION STYLES
+   Main introduction area with profile and tagline
+   ============================================ */
+
+/* Hero container - full width centered */
+#Hero-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+/* Hero content wrapper */
+#Hero-wrapper {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Profile image styling */
+#Hero-img {
+    height: 100%;
+    max-height: 20rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    border: 2px solid white;
+}
+
+/* Hero text content container */
+#Hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    max-width: 45rem;
+}
+
+/* Hero heading */
+#Hero-head {
+    font-family: "inter", sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Highlighted name text */
+#Hero-important {
+    font-family: "Elsie", serif;
+    font-weight: 900;
+    color: #ffc08a;
+    margin-left: -1px;
+}
+
+/* Horizontal divider under heading */
+#hero-divider {
+    margin-top: 3px;
+    width: 80%;
+    border: 2px solid white;
+}
+
+/* Hero paragraph text */
+#Hero-p {
+    margin-top: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 80%;
+}
+
+/* ============================================
+   ANIMATED TAGS SECTION
+   Horizontal scrolling skills/roles animation
+   ============================================ */
+
+/* Wrapper for animated items with gradient mask */
+#wrapper {
+    margin-top: 1.25rem;
+    position: relative;
+    width: 60%;
+    max-width: 1000px;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0)
+    );
+}
+
+/* Individual animated tag items */
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 8rem;
+    padding: 3px 22px;
+    border-radius: 150px;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.048);
+    font-family: "Playfair", serif;
+    font-size: 1.25rem;
+    text-wrap: nowrap;
+    position: absolute;
+    left: max(calc(10.2rem * 8), 100%);
+    animation-name: scrollLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.item:hover {
+    background-color: rgb(85, 85, 85);
+    color: white;
+    border: 2px dashed white;
+}
+
+/* Keyframe animation for horizontal scroll */
+@keyframes scrollLeft {
+    to {
+        left: -10rem;
+    }
+}
+
+/* Individual animation delays for each item */
+.item1 { animation-delay: calc(30s / 8 * (8 - 1) * -1); }
+.item2 { animation-delay: calc(30s / 8 * (8 - 2) * -1); }
+.item3 { animation-delay: calc(30s / 8 * (8 - 3) * -1); }
+.item4 { animation-delay: calc(30s / 8 * (8 - 4) * -1); }
+.item5 { animation-delay: calc(30s / 8 * (8 - 5) * -1); }
+.item6 { animation-delay: calc(30s / 8 * (8 - 6) * -1); }
+.item7 { animation-delay: calc(30s / 8 * (8 - 7) * -1); }
+.item8 { animation-delay: calc(30s / 8 * (8 - 8) * -1); }
+
+/* ============================================
+   HERO BUTTONS
+   Call-to-action buttons in hero section
+   ============================================ */
+
+#Hero-buttons {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    height: 3rem;
+    width: 11rem;
+    padding: 0 15px;
+    font-family: "inter", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Primary button style */
+.btn1 {
+    background-color: #ffc08a;
+    border: 2px solid black;
+    border-radius: 7px;
+}
+
+.btn1:hover {
+    box-shadow: 0 0 10px #ffc08a;
+    cursor: pointer;
+}
+
+/* ============================================
+   ABOUT ME SECTION
+   Personal introduction and background
+   ============================================ */
+
+/* Background container for about section */
+#about-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #2e2e2e;
+    margin-top: 7rem;
+}
+
+/* About me content wrapper */
+#aboutme {
+    margin-bottom: 2.5rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    max-width: 45rem;
+}
+
+/* Section title styling */
+#about-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Section divider line */
+#divider {
+    margin-top: 3px;
+    border: 1px solid white;
+    width: 70%;
+}
+
+/* About me heading */
+#about-name {
+    font-family: "inter", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Highlighted text in about section */
+#about-important {
+    color: #ffc08a;
+    font-family: "Elsie", serif;
+    font-weight: 600;
+}
+
+/* About me description text */
+#about-description {
+    margin-top: 0.5rem;
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
+    width: 80%;
+    padding: 0 20px;
+}
+
+/* ============================================
+   SKILLS SECTION
+   Display of technical abilities and tools
+   ============================================ */
+
+/* Main skills container */
+#Skills-holder {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Skills title */
+#skill-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Skills content wrapper */
+#Skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: start;
+    gap: 1rem;
+}
+
+/* Section separator line */
+.seperator {
+    width: 100%;
+    height: 0.2rem;
+    background-color: white;
+    border-radius: 50px;
+    margin: 1rem 0;
+}
+
+/* ============================================
+   APPLICATIONS/TOOLS SKILLS
+   Display of software and tools proficiency
+   ============================================ */
+
+/* Applications skills container */
+#Skillapps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 9px;
+    padding: 15px 15px;
+    gap: 10px;
+}
+
+/* Individual app skill item */
+.appclass {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.appclass:hover {
+    text-shadow: 0 0 2px #FFE1BA;
+    box-shadow: 0 0 7px white;
+}
+
+/* App icon image styling */
+.image-size {
+    height: 40px;
+    width: 40px;
+    background-color: #1d1d1d;
+    border: 2px solid white;
+    border-radius: 7px;
+    padding: 5px 5px;
+}
+
+/* App text content container */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    margin-right: 0.25rem;
+}
+
+/* App name title */
+.title-class {
+    color: white;
+    margin: 0;
+    margin-bottom: 3px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+/* App proficiency level text */
+.proficiency-class {
+    color: #CFCECE;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+/* ============================================
+   PROGRAMMING LANGUAGES SKILLS
+   Display of coding languages proficiency
+   ============================================ */
+
+/* Languages skills container */
+#lang-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 9px;
+    padding: 10px 20px;
+}
+
+/* Individual language skill item */
+.Lang-select {
+    margin: 5px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+    border-radius: 7px;
+    padding: 5px 10px;
+}
+
+.Lang-select:hover {
+    text-shadow: 0 0 2px #FFE1BA;
+    box-shadow: 0 0 7px white;
+}
+
+/* Language name title */
+.Lang-title {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+/* Language proficiency level */
+.Lang-level {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+/* ============================================
+   SKILLS DICTIONARY / LEGEND
+   Explanation of proficiency level terminology
+   ============================================ */
+
+/* Dictionary container */
+#dictionary-items {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/* Individual dictionary meaning item */
+.meaning {
+    padding: 2px 5px;
+    color: white;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 3px;
+}
+
+/* Color coding for different proficiency levels */
+.dict1 {
+    color: #ffe1ba;
+    border: 2px solid #ffe1ba;
+}
+
+.dict2 {
+    color: #ffc88f;
+    border: 2px solid #ffc88f;
+}
+
+.dict3 {
+    color: #ffa95e;
+    border: 2px solid #ffa95e;
+}
+
+.dict4 {
+    color: #f07d3c;
+    border: 2px solid #f07d3c;
+}
+
+.dict5 {
+    color: #c75b24;
+    border: 2px solid #c75b24;
+}
+
+/* ============================================
+   CUSTOM TARGET CURSOR
+   Animated cursor with corner elements
+   ============================================ */
+
+/* Cursor wrapper container */
+.target-cursor-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+}
+
+/* Central cursor dot */
+.target-cursor-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+}
+
+/* Cursor corner elements */
+.target-cursor-corner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #ffffff;
+    border-radius: 3px;
+    will-change: transform;
+}
+
+/* Top-left corner */
+.corner-tl {
+    transform: translate(-150%, -150%);
+    border-right: none;
+    border-bottom: none;
+}
+
+/* Top-right corner */
+.corner-tr {
+    transform: translate(50%, -150%);
+    border-left: none;
+    border-bottom: none;
+}
+
+/* Bottom-right corner */
+.corner-br {
+    transform: translate(50%, 50%);
+    border-left: none;
+    border-top: none;
+}
+
+/* Bottom-left corner */
+.corner-bl {
+    transform: translate(-150%, 50%);
+    border-right: none;
+    border-top: none;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - DESKTOP
+   Styles for screens 1000px and wider
+   ============================================ */
+
+@media (min-width: 1000px) {
+    /* Navigation items visible on desktop */
+    #nav-items {
+        display: flex;
+    }
+
+    /* Navigation button styling */
+    .NavButton {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        height: 30px;
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+    }
+
+    .NavButton:hover {
+        font-weight: 700;
+    }
+
+    /* Hero wrapper fixed width for desktop */
+    #Hero-wrapper {
+        width: 1000px;
+    }
+
+    /* Dictionary width adjustment */
+    #dictionary-items {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1155px) {
+    #dictionary-items {
+        width: 60%;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET & MOBILE
+   Styles for screens under 1000px
+   ============================================ */
+
+@media (max-width: 1000px) {
+    /* Hide navigation items on mobile */
+    #nav-items {
+        display: none;
+    }
+
+    .nav-text {
+        font-size: 20px;
+    }
+
+    /* Responsive hero section */
+    #Hero-wrapper {
+        width: 100%;
+    }
+
+    #Hero-head {
+        font-size: 1.75rem;
+    }
+
+    #Hero-p {
+        font-size: 1.25rem;
+    }
+
+    .item {
+        font-size: 1rem;
+    }
+
+    .hero-btn {
+        width: 10rem;
+        font-size: 1rem;
+    }
+
+    .btn1:hover {
+        box-shadow: 0 0 5px #ffc08a;
+        cursor: pointer;
+    }
+
+    /* About section responsive */
+    #about-description {
+        padding: 0;
+        width: 80%;
+    }
+
+    /* Dictionary responsive width */
+    #dictionary-items {
+        width: 80%;
+        justify-content: center;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 650px) {
+    #Skills {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    /* App items adjust for mobile */
+    .appclass {
+        justify-content: start;
+        border-radius: 50px;
+    }
+
+    .image-size {
+        height: 38px;
+        width: 38px;
+        border-radius: 50px;
+    }
+
+    .text-container {
+        align-items: start;
+    }
+}
+
+@media (max-width: 500px) {
+    /* Hero image size adjustment */
+    #Hero-img {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    #Hero-p {
+        width: 80%;
+    }
+}
