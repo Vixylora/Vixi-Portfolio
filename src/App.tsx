@@ -5,8 +5,9 @@ import TargetCursor from './Components/CursorTarget/TargetCursor'
 function App() {
   return (
     <>
-      <TargetCursor spinDuration={4} hideDefaultCursor={true} />
-      <Navigation />
+      <div id='warning'>
+        <h2>The website is under reconstruction</h2>
+      </div>
       <Landing />
     </>
   )
