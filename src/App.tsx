@@ -1,6 +1,4 @@
-import Landing from './Components/Content/Landing'
-import Navigation from './Navigation'
-import TargetCursor from './Components/CursorTarget/TargetCursor'
+import Landing from './Archive/Components/Content/Landing'
 
 function App() {
   return (
@@ -13,4 +11,4 @@ function App() {
   )
 }
 
-export default App
+export default App;  
